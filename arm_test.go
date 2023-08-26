@@ -1,4 +1,4 @@
-package arm_benchmarks
+package arm_wrestle
 
 import (
 	"math/bits"
