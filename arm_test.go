@@ -2,6 +2,7 @@ package arm_wrestle
 
 import (
 	"math/bits"
+	"sync"
 	"sync/atomic"
 	"testing"
 )
@@ -373,4 +374,226 @@ func BenchmarkAtomicOperationsBool(b *testing.B) {
 		x.CompareAndSwap(true, false)
 
 	}
+}
+
+const iterations = 10_000
+
+func BenchmarkMutex(b *testing.B) {
+	var m sync.Mutex
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		m.Lock()
+		for j := 0; j < iterations; j++ {
+		}
+		m.Unlock()
+	}
+}
+
+func BenchmarkRWMutex_Read(b *testing.B) {
+	var m sync.RWMutex
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		m.RLock()
+		for j := 0; j < iterations; j++ {
+		}
+		m.RUnlock()
+	}
+}
+
+func BenchmarkRWMutex_Write(b *testing.B) {
+	var m sync.RWMutex
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		m.Lock()
+		for j := 0; j < iterations; j++ {
+		}
+		m.Unlock()
+	}
+}
+
+func BenchmarkWaitGroup(b *testing.B) {
+	var wg sync.WaitGroup
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		wg.Add(iterations)
+		for j := 0; j < iterations; j++ {
+			go func() {
+				wg.Done()
+			}()
+		}
+		wg.Wait()
+	}
+}
+
+func BenchmarkChannel(b *testing.B) {
+	ch := make(chan int, iterations)
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		go func() {
+			for j := 0; j < iterations; j++ {
+				ch <- j
+			}
+		}()
+		for j := 0; j < iterations; j++ {
+			<-ch
+		}
+	}
+}
+
+func BenchmarkAtomicAdd(b *testing.B) {
+	var counter int64
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		atomic.AddInt64(&counter, 1)
+	}
+}
+
+func BenchmarkOnce(b *testing.B) {
+	var once sync.Once
+	action := func() {}
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		once.Do(action)
+	}
+}
+
+func BenchmarkCond(b *testing.B) {
+	cond := sync.NewCond(&sync.Mutex{})
+	ready := make(chan struct{})
+
+	b.ResetTimer()
+	go func() {
+		b.StartTimer()
+		for i := 0; i < b.N; i++ {
+			cond.L.Lock()
+			ready <- struct{}{} // Notify that we're about to Wait.
+			cond.Wait()
+			cond.L.Unlock()
+		}
+		b.StopTimer()
+	}()
+
+	for i := 0; i < b.N; i++ {
+		<-ready // Wait until the other goroutine is about to Wait.
+		cond.L.Lock()
+		cond.Signal()
+		cond.L.Unlock()
+	}
+}
+
+func BenchmarkPool(b *testing.B) {
+	pool := &sync.Pool{
+		New: func() interface{} {
+			return 0
+		},
+	}
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		pool.Put(i)
+		pool.Get()
+	}
+}
+
+func BenchmarkMutexContended(b *testing.B) {
+	var mu sync.Mutex
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			mu.Lock()
+			mu.Unlock()
+		}
+	})
+}
+
+func BenchmarkRWMutexContendedRead(b *testing.B) {
+	var mu sync.RWMutex
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			mu.RLock()
+			mu.RUnlock()
+		}
+	})
+}
+
+func BenchmarkRWMutexContendedWrite(b *testing.B) {
+	var mu sync.RWMutex
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			mu.Lock()
+			mu.Unlock()
+		}
+	})
+}
+
+func BenchmarkSemaphore(b *testing.B) {
+	sema := make(chan struct{}, 1)
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		sema <- struct{}{}
+		<-sema
+	}
+}
+
+func BenchmarkMutex2(b *testing.B) {
+	var mu sync.Mutex
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		mu.Lock()
+		mu.Unlock()
+	}
+}
+
+func BenchmarkRWMutex(b *testing.B) {
+	var rwmu sync.RWMutex
+	for i := 0; i < b.N; i++ {
+		rwmu.RLock()
+		rwmu.RUnlock()
+	}
+}
+
+func BenchmarkChannel2(b *testing.B) {
+	ch := make(chan struct{}, 1)
+	for i := 0; i < b.N; i++ {
+		ch <- struct{}{}
+		<-ch
+	}
+}
+
+func BenchmarkMapRWMutex(b *testing.B) {
+	var mu sync.RWMutex
+	m := make(map[int]int)
+
+	b.Run("Write", func(b *testing.B) {
+		b.RunParallel(func(pb *testing.PB) {
+			for pb.Next() {
+				mu.Lock()
+				m[1] = 1
+				mu.Unlock()
+			}
+		})
+	})
+
+	b.Run("Read", func(b *testing.B) {
+		b.RunParallel(func(pb *testing.PB) {
+			for pb.Next() {
+				mu.RLock()
+				_ = m[1]
+				mu.RUnlock()
+			}
+		})
+	})
+}
+
+func BenchmarkMapMutex(b *testing.B) {
+	var mu sync.Mutex
+	m := make(map[int]int)
+
+	b.RunParallel(func(pb *testing.PB) {
+		for pb.Next() {
+			mu.Lock()
+			m[1] = 1
+			_ = m[1]
+			mu.Unlock()
+		}
+	})
 }
