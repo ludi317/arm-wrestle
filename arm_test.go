@@ -10,6 +10,7 @@ import (
 var (
 	SinkByte      byte
 	SinkUint16    uint16
+	SinkUint8     uint8
 	SinkUint      uint
 	SinkUint2     uint
 	SinkFloat32   float32
@@ -154,6 +155,33 @@ func BenchmarkTrailingZeros(b *testing.B) {
 		SinkInt += bits.TrailingZeros32(uint32(i))
 		SinkInt += bits.TrailingZeros16(uint16(i))
 		SinkInt += bits.TrailingZeros8(uint8(i))
+	}
+}
+
+func BenchmarkLeadingZeros(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SinkInt = bits.LeadingZeros64(uint64(i))
+		SinkInt += bits.LeadingZeros32(uint32(i))
+		SinkInt += bits.LeadingZeros16(uint16(i))
+		SinkInt += bits.LeadingZeros8(uint8(i))
+	}
+}
+
+func BenchmarkRotateLeft(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SinkUint64 = bits.RotateLeft64(uint64(i), i)
+		SinkUint32 += bits.RotateLeft32(uint32(i), i)
+		SinkUint16 += bits.RotateLeft16(uint16(i), i)
+		SinkUint8 += bits.RotateLeft8(uint8(i), i)
+	}
+}
+
+func BenchmarkOnesCount(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SinkInt += bits.OnesCount64(uint64(i))
+		SinkInt += bits.OnesCount32(uint32(i))
+		SinkInt += bits.OnesCount16(uint16(i))
+		SinkInt += bits.OnesCount8(uint8(i))
 	}
 }
 
