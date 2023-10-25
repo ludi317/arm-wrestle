@@ -1,0 +1,363 @@
+goos: linux
+goarch: arm
+pkg: github.com/ludi317/arm-wrestle
+cpu: ARMv7 Processor rev 5 (v7l)
+BenchmarkFloat32Arithmetic
+BenchmarkFloat32Arithmetic                 	  248317	      4738 ns/op
+BenchmarkFloat32Arithmetic                 	  249208	      4728 ns/op
+BenchmarkFloat32Arithmetic                 	  247683	      4723 ns/op
+BenchmarkFloat32Arithmetic                 	  243788	      4704 ns/op
+BenchmarkFloat32Arithmetic                 	  252498	      4706 ns/op
+BenchmarkFloat32Arithmetic                 	  251686	      4704 ns/op
+BenchmarkInt32Arithmetic
+BenchmarkInt32Arithmetic                   	75089252	        15.76 ns/op
+BenchmarkInt32Arithmetic                   	75333538	        15.76 ns/op
+BenchmarkInt32Arithmetic                   	75986720	        15.73 ns/op
+BenchmarkInt32Arithmetic                   	76154245	        15.75 ns/op
+BenchmarkInt32Arithmetic                   	75842395	        15.71 ns/op
+BenchmarkInt32Arithmetic                   	76095136	        15.73 ns/op
+BenchmarkFloat64Arithmetic
+BenchmarkFloat64Arithmetic                 	  298953	      3896 ns/op
+BenchmarkFloat64Arithmetic                 	  300336	      3896 ns/op
+BenchmarkFloat64Arithmetic                 	  303343	      3899 ns/op
+BenchmarkFloat64Arithmetic                 	  300213	      3894 ns/op
+BenchmarkFloat64Arithmetic                 	  303634	      3901 ns/op
+BenchmarkFloat64Arithmetic                 	  303697	      3903 ns/op
+BenchmarkInt64Arithmetic
+BenchmarkInt64Arithmetic                   	40896908	        29.19 ns/op
+BenchmarkInt64Arithmetic                   	40990770	        29.14 ns/op
+BenchmarkInt64Arithmetic                   	40409090	        29.15 ns/op
+BenchmarkInt64Arithmetic                   	41112847	        29.16 ns/op
+BenchmarkInt64Arithmetic                   	40998646	        29.19 ns/op
+BenchmarkInt64Arithmetic                   	41061631	        29.15 ns/op
+BenchmarkANDconstBICconst
+BenchmarkANDconstBICconst                  	22449082	        52.75 ns/op
+BenchmarkANDconstBICconst                  	22658397	        52.62 ns/op
+BenchmarkANDconstBICconst                  	22658998	        52.55 ns/op
+BenchmarkANDconstBICconst                  	22808029	        52.55 ns/op
+BenchmarkANDconstBICconst                  	22671016	        52.70 ns/op
+BenchmarkANDconstBICconst                  	22719685	        52.68 ns/op
+BenchmarkUint64Move
+BenchmarkUint64Move                        	53244492	        22.42 ns/op
+BenchmarkUint64Move                        	53380558	        22.42 ns/op
+BenchmarkUint64Move                        	53173834	        22.43 ns/op
+BenchmarkUint64Move                        	53345827	        22.42 ns/op
+BenchmarkUint64Move                        	53304235	        22.42 ns/op
+BenchmarkUint64Move                        	53228256	        22.45 ns/op
+BenchmarkADD
+BenchmarkADD                               	 1000000	      1007 ns/op
+BenchmarkADD                               	 1000000	      1006 ns/op
+BenchmarkADD                               	 1000000	      1007 ns/op
+BenchmarkADD                               	 1000000	      1006 ns/op
+BenchmarkADD                               	 1000000	      1006 ns/op
+BenchmarkADD                               	 1000000	      1007 ns/op
+BenchmarkADDBICconst
+BenchmarkADDBICconst                       	62822626	        18.95 ns/op
+BenchmarkADDBICconst                       	62882466	        18.95 ns/op
+BenchmarkADDBICconst                       	62992498	        18.95 ns/op
+BenchmarkADDBICconst                       	62968911	        18.95 ns/op
+BenchmarkADDBICconst                       	63031446	        18.96 ns/op
+BenchmarkADDBICconst                       	63017308	        18.95 ns/op
+BenchmarkADDBICconstInt64
+BenchmarkADDBICconstInt64                  	42797296	        27.88 ns/op
+BenchmarkADDBICconstInt64                  	42898016	        27.88 ns/op
+BenchmarkADDBICconstInt64                  	42921272	        27.88 ns/op
+BenchmarkADDBICconstInt64                  	42783308	        27.88 ns/op
+BenchmarkADDBICconstInt64                  	42828403	        27.87 ns/op
+BenchmarkADDBICconstInt64                  	42907045	        27.87 ns/op
+BenchmarkWithMulDAndMulF
+BenchmarkWithMulDAndMulF                   	 1218456	       984.7 ns/op
+BenchmarkWithMulDAndMulF                   	 1218406	       984.7 ns/op
+BenchmarkWithMulDAndMulF                   	 1217905	       984.9 ns/op
+BenchmarkWithMulDAndMulF                   	 1218627	       984.7 ns/op
+BenchmarkWithMulDAndMulF                   	 1218478	       984.7 ns/op
+BenchmarkWithMulDAndMulF                   	 1218612	       984.7 ns/op
+BenchmarkBitwiseInt32
+BenchmarkBitwiseInt32                      	134524462	         8.919 ns/op
+BenchmarkBitwiseInt32                      	134467573	         8.954 ns/op
+BenchmarkBitwiseInt32                      	134515304	         8.918 ns/op
+BenchmarkBitwiseInt32                      	134545885	         8.919 ns/op
+BenchmarkBitwiseInt32                      	134538720	         8.919 ns/op
+BenchmarkBitwiseInt32                      	134504248	         8.917 ns/op
+BenchmarkBitwiseInt64
+BenchmarkBitwiseInt64                      	89670080	        13.38 ns/op
+BenchmarkBitwiseInt64                      	89676366	        13.38 ns/op
+BenchmarkBitwiseInt64                      	88971308	        13.38 ns/op
+BenchmarkBitwiseInt64                      	88670673	        13.38 ns/op
+BenchmarkBitwiseInt64                      	89177930	        13.38 ns/op
+BenchmarkBitwiseInt64                      	89758461	        13.38 ns/op
+BenchmarkTrailingZeros
+BenchmarkTrailingZeros                     	39679003	        30.10 ns/op
+BenchmarkTrailingZeros                     	39700881	        30.11 ns/op
+BenchmarkTrailingZeros                     	39706424	        30.10 ns/op
+BenchmarkTrailingZeros                     	39762202	        30.10 ns/op
+BenchmarkTrailingZeros                     	39744849	        30.11 ns/op
+BenchmarkTrailingZeros                     	39712856	        30.10 ns/op
+BenchmarkLeadingZeros
+BenchmarkLeadingZeros                      	30657390	        39.02 ns/op
+BenchmarkLeadingZeros                      	30690672	        39.03 ns/op
+BenchmarkLeadingZeros                      	30637047	        39.03 ns/op
+BenchmarkLeadingZeros                      	30475840	        39.25 ns/op
+BenchmarkLeadingZeros                      	30515235	        39.24 ns/op
+BenchmarkLeadingZeros                      	30501096	        39.26 ns/op
+BenchmarkRotateLeft
+BenchmarkRotateLeft                        	10767777	       111.0 ns/op
+BenchmarkRotateLeft                        	10796716	       111.0 ns/op
+BenchmarkRotateLeft                        	10794374	       111.0 ns/op
+BenchmarkRotateLeft                        	10796797	       111.0 ns/op
+BenchmarkRotateLeft                        	10798472	       111.0 ns/op
+BenchmarkRotateLeft                        	10788879	       111.0 ns/op
+BenchmarkOnesCount
+BenchmarkOnesCount                         	 8277943	       144.7 ns/op
+BenchmarkOnesCount                         	 8289270	       144.6 ns/op
+BenchmarkOnesCount                         	 8276462	       144.6 ns/op
+BenchmarkOnesCount                         	 8210865	       145.1 ns/op
+BenchmarkOnesCount                         	 8289123	       144.6 ns/op
+BenchmarkOnesCount                         	 8288872	       144.9 ns/op
+BenchmarkProducerConsumerBufferedCh
+BenchmarkProducerConsumerBufferedCh        	  321194	      3478 ns/op
+BenchmarkProducerConsumerBufferedCh        	  331138	      3486 ns/op
+BenchmarkProducerConsumerBufferedCh        	  340587	      3480 ns/op
+BenchmarkProducerConsumerBufferedCh        	  343314	      3479 ns/op
+BenchmarkProducerConsumerBufferedCh        	  339808	      3480 ns/op
+BenchmarkProducerConsumerBufferedCh        	  341382	      3484 ns/op
+BenchmarkProducerConsumerBufferedChInt64
+BenchmarkProducerConsumerBufferedChInt64   	  326889	      3530 ns/op
+BenchmarkProducerConsumerBufferedChInt64   	  336648	      3527 ns/op
+BenchmarkProducerConsumerBufferedChInt64   	  335844	      3536 ns/op
+BenchmarkProducerConsumerBufferedChInt64   	  333750	      3526 ns/op
+BenchmarkProducerConsumerBufferedChInt64   	  336624	      3532 ns/op
+BenchmarkProducerConsumerBufferedChInt64   	  338809	      3528 ns/op
+BenchmarkProducerConsumerUnBufferedCh
+BenchmarkProducerConsumerUnBufferedCh      	  260883	      4501 ns/op
+BenchmarkProducerConsumerUnBufferedCh      	  265987	      4502 ns/op
+BenchmarkProducerConsumerUnBufferedCh      	  261091	      4497 ns/op
+BenchmarkProducerConsumerUnBufferedCh      	  265630	      4483 ns/op
+BenchmarkProducerConsumerUnBufferedCh      	  266203	      4483 ns/op
+BenchmarkProducerConsumerUnBufferedCh      	  265893	      4486 ns/op
+BenchmarkProducerConsumerUnBufferedChInt64
+BenchmarkProducerConsumerUnBufferedChInt64 	  245642	      4492 ns/op
+BenchmarkProducerConsumerUnBufferedChInt64 	  266150	      4490 ns/op
+BenchmarkProducerConsumerUnBufferedChInt64 	  266612	      4490 ns/op
+BenchmarkProducerConsumerUnBufferedChInt64 	  265003	      4490 ns/op
+BenchmarkProducerConsumerUnBufferedChInt64 	  266530	      4490 ns/op
+BenchmarkProducerConsumerUnBufferedChInt64 	  266070	      4492 ns/op
+BenchmarkGetCntxct
+BenchmarkGetCntxct                         	  324970	      3464 ns/op
+BenchmarkGetCntxct                         	  340190	      3490 ns/op
+BenchmarkGetCntxct                         	  343047	      3506 ns/op
+BenchmarkGetCntxct                         	  342202	      3500 ns/op
+BenchmarkGetCntxct                         	  328368	      3497 ns/op
+BenchmarkGetCntxct                         	  342427	      3494 ns/op
+BenchmarkCASInt32
+BenchmarkCASInt32                          	 7454932	       160.7 ns/op
+BenchmarkCASInt32                          	 7437322	       160.3 ns/op
+BenchmarkCASInt32                          	 7437649	       160.6 ns/op
+BenchmarkCASInt32                          	 7469146	       160.3 ns/op
+BenchmarkCASInt32                          	 7474239	       160.5 ns/op
+BenchmarkCASInt32                          	 7474256	       160.5 ns/op
+BenchmarkCASInt64
+BenchmarkCASInt64                          	 7736284	       154.8 ns/op
+BenchmarkCASInt64                          	 7740391	       154.8 ns/op
+BenchmarkCASInt64                          	 7743442	       154.8 ns/op
+BenchmarkCASInt64                          	 7743957	       154.8 ns/op
+BenchmarkCASInt64                          	 7741472	       154.8 ns/op
+BenchmarkCASInt64                          	 7744465	       154.8 ns/op
+BenchmarkCASUint64
+BenchmarkCASUint64                         	 7819173	       152.6 ns/op
+BenchmarkCASUint64                         	 7897359	       151.8 ns/op
+BenchmarkCASUint64                         	 7812222	       152.3 ns/op
+BenchmarkCASUint64                         	 7821247	       151.7 ns/op
+BenchmarkCASUint64                         	 7896866	       151.7 ns/op
+BenchmarkCASUint64                         	 7894753	       151.7 ns/op
+BenchmarkCASUint32
+BenchmarkCASUint32                         	 7479985	       160.3 ns/op
+BenchmarkCASUint32                         	 7473640	       160.2 ns/op
+BenchmarkCASUint32                         	 7471495	       160.3 ns/op
+BenchmarkCASUint32                         	 7478264	       160.3 ns/op
+BenchmarkCASUint32                         	 7486311	       160.2 ns/op
+BenchmarkCASUint32                         	 7467988	       160.3 ns/op
+BenchmarkCASUintptr
+BenchmarkCASUintptr                        	 7265041	       164.8 ns/op
+BenchmarkCASUintptr                        	 7258659	       164.8 ns/op
+BenchmarkCASUintptr                        	 7265170	       164.7 ns/op
+BenchmarkCASUintptr                        	 7277586	       164.8 ns/op
+BenchmarkCASUintptr                        	 7267243	       164.8 ns/op
+BenchmarkCASUintptr                        	 7270886	       164.8 ns/op
+BenchmarkAtomicOperationsInt64
+BenchmarkAtomicOperationsInt64             	 4443436	       269.9 ns/op
+BenchmarkAtomicOperationsInt64             	 4442667	       270.1 ns/op
+BenchmarkAtomicOperationsInt64             	 4440543	       270.3 ns/op
+BenchmarkAtomicOperationsInt64             	 4442055	       270.0 ns/op
+BenchmarkAtomicOperationsInt64             	 4441867	       269.9 ns/op
+BenchmarkAtomicOperationsInt64             	 4437860	       270.0 ns/op
+BenchmarkAtomicOperationsInt32
+BenchmarkAtomicOperationsInt32             	 4042953	       296.7 ns/op
+BenchmarkAtomicOperationsInt32             	 4039867	       296.8 ns/op
+BenchmarkAtomicOperationsInt32             	 4042302	       297.2 ns/op
+BenchmarkAtomicOperationsInt32             	 4036210	       296.8 ns/op
+BenchmarkAtomicOperationsInt32             	 4041472	       296.7 ns/op
+BenchmarkAtomicOperationsInt32             	 4041261	       296.7 ns/op
+BenchmarkAtomicOperationsUint64
+BenchmarkAtomicOperationsUint64            	 4479664	       267.7 ns/op
+BenchmarkAtomicOperationsUint64            	 4478492	       267.7 ns/op
+BenchmarkAtomicOperationsUint64            	 4475200	       267.7 ns/op
+BenchmarkAtomicOperationsUint64            	 4475738	       267.9 ns/op
+BenchmarkAtomicOperationsUint64            	 4477933	       267.7 ns/op
+BenchmarkAtomicOperationsUint64            	 4476204	       267.8 ns/op
+BenchmarkAtomicOperationsUint32
+BenchmarkAtomicOperationsUint32            	 4037910	       296.9 ns/op
+BenchmarkAtomicOperationsUint32            	 4042580	       296.7 ns/op
+BenchmarkAtomicOperationsUint32            	 4038796	       296.7 ns/op
+BenchmarkAtomicOperationsUint32            	 4041852	       296.9 ns/op
+BenchmarkAtomicOperationsUint32            	 4036622	       296.8 ns/op
+BenchmarkAtomicOperationsUint32            	 4037780	       296.9 ns/op
+BenchmarkAtomicOperationsUintptr
+BenchmarkAtomicOperationsUintptr           	 3981318	       301.2 ns/op
+BenchmarkAtomicOperationsUintptr           	 3978603	       301.2 ns/op
+BenchmarkAtomicOperationsUintptr           	 3980150	       301.1 ns/op
+BenchmarkAtomicOperationsUintptr           	 3979017	       301.3 ns/op
+BenchmarkAtomicOperationsUintptr           	 3980040	       301.1 ns/op
+BenchmarkAtomicOperationsUintptr           	 3958018	       303.4 ns/op
+BenchmarkAtomicOperationsBool
+BenchmarkAtomicOperationsBool              	 2407374	       498.9 ns/op
+BenchmarkAtomicOperationsBool              	 2407639	       498.2 ns/op
+BenchmarkAtomicOperationsBool              	 2403673	       498.2 ns/op
+BenchmarkAtomicOperationsBool              	 2406433	       498.2 ns/op
+BenchmarkAtomicOperationsBool              	 2407412	       498.3 ns/op
+BenchmarkAtomicOperationsBool              	 2406326	       498.2 ns/op
+BenchmarkMutex
+BenchmarkMutex                             	   52868	     22687 ns/op
+BenchmarkMutex                             	   52342	     22728 ns/op
+BenchmarkMutex                             	   52832	     22684 ns/op
+BenchmarkMutex                             	   52904	     22660 ns/op
+BenchmarkMutex                             	   52820	     22685 ns/op
+BenchmarkMutex                             	   52790	     22664 ns/op
+BenchmarkRWMutex_Read
+BenchmarkRWMutex_Read                      	   52767	     22727 ns/op
+BenchmarkRWMutex_Read                      	   52820	     22747 ns/op
+BenchmarkRWMutex_Read                      	   52816	     22702 ns/op
+BenchmarkRWMutex_Read                      	   52730	     22711 ns/op
+BenchmarkRWMutex_Read                      	   52960	     22572 ns/op
+BenchmarkRWMutex_Read                      	   53091	     22570 ns/op
+BenchmarkRWMutex_Write
+BenchmarkRWMutex_Write                     	   51903	     22966 ns/op
+BenchmarkRWMutex_Write                     	   52082	     22971 ns/op
+BenchmarkRWMutex_Write                     	   52327	     22900 ns/op
+BenchmarkRWMutex_Write                     	   52333	     22901 ns/op
+BenchmarkRWMutex_Write                     	   52327	     22897 ns/op
+BenchmarkRWMutex_Write                     	   52350	     22902 ns/op
+BenchmarkWaitGroup
+BenchmarkWaitGroup                         	      14	  76837447 ns/op
+BenchmarkWaitGroup                         	      14	  80537040 ns/op
+BenchmarkWaitGroup                         	      14	  80503960 ns/op
+BenchmarkWaitGroup                         	      14	  76729546 ns/op
+BenchmarkWaitGroup                         	      14	  77118418 ns/op
+BenchmarkWaitGroup                         	      14	  76894393 ns/op
+BenchmarkChannel
+BenchmarkChannel                           	     142	   8306195 ns/op
+BenchmarkChannel                           	     144	   8288725 ns/op
+BenchmarkChannel                           	     142	   8356932 ns/op
+BenchmarkChannel                           	     142	   8341517 ns/op
+BenchmarkChannel                           	     142	   8346531 ns/op
+BenchmarkChannel                           	     142	   8359963 ns/op
+BenchmarkAtomicAdd
+BenchmarkAtomicAdd                         	16112976	        73.92 ns/op
+BenchmarkAtomicAdd                         	16220606	        73.95 ns/op
+BenchmarkAtomicAdd                         	16220709	        73.68 ns/op
+BenchmarkAtomicAdd                         	16265254	        73.66 ns/op
+BenchmarkAtomicAdd                         	16327555	        73.62 ns/op
+BenchmarkAtomicAdd                         	16255671	        73.61 ns/op
+BenchmarkOnce
+BenchmarkOnce                              	18521428	        64.67 ns/op
+BenchmarkOnce                              	18534511	        64.69 ns/op
+BenchmarkOnce                              	18482397	        64.97 ns/op
+BenchmarkOnce                              	18194230	        65.00 ns/op
+BenchmarkOnce                              	18417848	        65.04 ns/op
+BenchmarkOnce                              	18390092	        65.03 ns/op
+BenchmarkCond
+BenchmarkCond                              	  122115	      9799 ns/op
+BenchmarkCond                              	  122088	      9793 ns/op
+BenchmarkCond                              	  122462	      9793 ns/op
+BenchmarkCond                              	  121996	      9807 ns/op
+BenchmarkCond                              	  122097	      9801 ns/op
+BenchmarkCond                              	  122386	      9790 ns/op
+BenchmarkPool
+BenchmarkPool                              	 1715605	       724.8 ns/op
+BenchmarkPool                              	 1667763	       741.1 ns/op
+BenchmarkPool                              	 1644076	       743.4 ns/op
+BenchmarkPool                              	 1646917	       733.4 ns/op
+BenchmarkPool                              	 1652253	       742.0 ns/op
+BenchmarkPool                              	 1655269	       742.7 ns/op
+BenchmarkMutexContended
+BenchmarkMutexContended                    	 5115722	       234.4 ns/op
+BenchmarkMutexContended                    	 5116526	       234.4 ns/op
+BenchmarkMutexContended                    	 5114404	       234.4 ns/op
+BenchmarkMutexContended                    	 5083730	       235.9 ns/op
+BenchmarkMutexContended                    	 5085150	       235.8 ns/op
+BenchmarkMutexContended                    	 5086777	       235.8 ns/op
+BenchmarkRWMutexContendedRead
+BenchmarkRWMutexContendedRead              	 4305021	       278.5 ns/op
+BenchmarkRWMutexContendedRead              	 4304258	       278.4 ns/op
+BenchmarkRWMutexContendedRead              	 4305272	       278.6 ns/op
+BenchmarkRWMutexContendedRead              	 4302782	       278.6 ns/op
+BenchmarkRWMutexContendedRead              	 4304443	       278.6 ns/op
+BenchmarkRWMutexContendedRead              	 4305680	       278.4 ns/op
+BenchmarkRWMutexContendedWrite
+BenchmarkRWMutexContendedWrite             	 2298686	       521.8 ns/op
+BenchmarkRWMutexContendedWrite             	 2299584	       521.5 ns/op
+BenchmarkRWMutexContendedWrite             	 2300140	       521.9 ns/op
+BenchmarkRWMutexContendedWrite             	 2299864	       521.5 ns/op
+BenchmarkRWMutexContendedWrite             	 2299010	       521.5 ns/op
+BenchmarkRWMutexContendedWrite             	 2300425	       521.6 ns/op
+BenchmarkSemaphore
+BenchmarkSemaphore                         	 1240066	       967.6 ns/op
+BenchmarkSemaphore                         	 1240028	       968.0 ns/op
+BenchmarkSemaphore                         	 1240042	       967.7 ns/op
+BenchmarkSemaphore                         	 1240057	       967.8 ns/op
+BenchmarkSemaphore                         	 1239476	       967.5 ns/op
+BenchmarkSemaphore                         	 1239548	       967.6 ns/op
+BenchmarkMutex2
+BenchmarkMutex2                            	 5688019	       210.9 ns/op
+BenchmarkMutex2                            	 5683231	       210.9 ns/op
+BenchmarkMutex2                            	 5687793	       211.0 ns/op
+BenchmarkMutex2                            	 5683096	       210.9 ns/op
+BenchmarkMutex2                            	 5686683	       210.8 ns/op
+BenchmarkMutex2                            	 5640481	       210.8 ns/op
+BenchmarkRWMutex
+BenchmarkRWMutex                           	 4950934	       242.3 ns/op
+BenchmarkRWMutex                           	 4945942	       242.2 ns/op
+BenchmarkRWMutex                           	 4950237	       242.2 ns/op
+BenchmarkRWMutex                           	 4949074	       242.3 ns/op
+BenchmarkRWMutex                           	 4949995	       242.2 ns/op
+BenchmarkRWMutex                           	 4950492	       242.2 ns/op
+BenchmarkChannel2
+BenchmarkChannel2                          	 1240029	       968.2 ns/op
+BenchmarkChannel2                          	 1239511	       968.0 ns/op
+BenchmarkChannel2                          	 1239828	       967.9 ns/op
+BenchmarkChannel2                          	 1239979	       967.6 ns/op
+BenchmarkChannel2                          	 1239984	       967.8 ns/op
+BenchmarkChannel2                          	 1240047	       968.3 ns/op
+BenchmarkMapRWMutex
+BenchmarkMapRWMutex/Write
+BenchmarkMapRWMutex/Write                  	 1519668	       791.0 ns/op
+BenchmarkMapRWMutex/Write                  	 1517486	       790.7 ns/op
+BenchmarkMapRWMutex/Write                  	 1519125	       789.4 ns/op
+BenchmarkMapRWMutex/Write                  	 1518301	       790.4 ns/op
+BenchmarkMapRWMutex/Write                  	 1517748	       790.0 ns/op
+BenchmarkMapRWMutex/Write                  	 1517028	       790.2 ns/op
+BenchmarkMapRWMutex/Read
+BenchmarkMapRWMutex/Read                   	 3582403	       334.7 ns/op
+BenchmarkMapRWMutex/Read                   	 3583065	       334.7 ns/op
+BenchmarkMapRWMutex/Read                   	 3581953	       334.7 ns/op
+BenchmarkMapRWMutex/Read                   	 3582145	       334.7 ns/op
+BenchmarkMapRWMutex/Read                   	 3582388	       334.8 ns/op
+BenchmarkMapRWMutex/Read                   	 3582424	       334.7 ns/op
+BenchmarkMapMutex
+BenchmarkMapMutex                          	 2304530	       520.8 ns/op
+BenchmarkMapMutex                          	 2299195	       520.9 ns/op
+BenchmarkMapMutex                          	 2300736	       520.7 ns/op
+BenchmarkMapMutex                          	 2304195	       520.5 ns/op
+BenchmarkMapMutex                          	 2304808	       520.6 ns/op
+BenchmarkMapMutex                          	 2304332	       520.6 ns/op
+PASS
