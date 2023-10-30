@@ -77,7 +77,7 @@ MapMutex                                   501.8n ± 0%   518.8n ± 0%   +3.37% 
 geomean                                    757.6n        617.4n       -18.50%
 ```
 ### Round 2
-The same Raspberry Pi 2 was also measured the benchmarks with `GOARM=5+keith` which is `GOARM=5` with  [Keith Randall's CL](https://go-review.googlesource.com/c/go/+/525637) applied.
+The same Raspberry Pi 2 also measured benchmarks on `GOARM=5+keith` which is `GOARM=5` with  [Keith Randall's CL](https://go-review.googlesource.com/c/go/+/525637) applied.
 
 The commit prior to Keith's change was `a2647f08f0c4e540540a7ae1b9ba7e668e6fed80`, so the `GOARM=7,softfloat` patch was rebased on top of that commit too, and rerun, for parity.
 
