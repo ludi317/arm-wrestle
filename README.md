@@ -86,7 +86,7 @@ System details given by `uname -a`: `Linux raspberrypi 6.1.0-rpi4-rpi-v7 #1 SMP 
 ```bash
 # GOARM=5+keith benchmarks
 # build go with keith's CL applied on top of a2647f08f0c4e540540a7ae1b9ba7e668e6fed80
-GOARCH=arm GOARM=5 GOOS=linux go test -c -o armv5.test
+GOARCH=arm GOARM=5 GOOS=linux go test -c -o armv5keith.test
 ./armv5keith.test -test.bench . -test.v -test.count 6 -test.cpu 1 | tee armv5keith_1cpu_raw.txt
 
 # GOARM=7,softfloat benchmarks
